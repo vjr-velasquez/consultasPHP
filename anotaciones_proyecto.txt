@@ -1,0 +1,9 @@
+=== Idea para el programa de venta de repuestos ===
+
+
+para el lado del cliente vamos a hacer un dashboard 
+
+1. como primer plano vamos a hacer que en el dashboard aparezca lo mas reciente
+2. que tenga una sala de ventas en donde el pueda buscar lo que necesita
+3. se va a tener una barrra de navegacion para poder buscar el repuesto por medio de nombre
+codigo , marca , 

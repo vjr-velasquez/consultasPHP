@@ -27,4 +27,4 @@
     }
 ?>
 <br>
-<a href="../index.php">Regresar</a>
+<a href="../formulario.php">Regresar</a>
