@@ -12,7 +12,11 @@
     <br>
     <ul>
         <li>
-            <a href="baseDatos/form_regiones_agregar.php">Agregar regiones</a>
+            <a href="baseDatos/vista_regiones.php">Procesos CRUD para las regiones</a>
+        </li>
+        <br>
+        <li>
+            <a href="baseDatos/vista_academicos.php">Procesos CRUD para los niveles Academicos</a>
         </li>
         <br>
         <li>

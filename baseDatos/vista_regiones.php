@@ -13,7 +13,8 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Nueva region
     </button>
-
+    <br>
+    <a href="../index.php">Regresar</a>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -70,16 +71,22 @@
             <td><?php echo $fila['cod_region'];?></td>
             <td><?php echo $fila['nombre'];?></td>
             <td><?php echo $fila['descripcion'];?></td>
-            <td>
-                <form action="crud_region.php" method="post">
+            <td class="d-flex flex-row">
+                <form action="crud_region.php" method="post" class="me-2">
                     <input type="hidden" name="hidden_codigo" id="hidden_codigo"
                            value="<?php echo $fila['cod_region'];?>">
                     <button type = "submit" name="btn_eliminar" id="btn_eliminar" class="btn btn-outline-danger">
                         <i class="bi bi-trash3"></i>
                     </button>
                 </form>
-                
-                <i class="bi bi-pencil-square"></i>
+                <form action="form_actualizar_region.php" method = "post">
+                    <input type="hidden" name="hidden_codigoa" id="hidden_codigoa"
+                           value="<?php echo $fila['cod_region'];?>">
+                    <button type = "submit" name="btn_actualizar" id="btn_actualizar" class="btn btn-outline-warning p-1">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </form>
+
             </td>
         </tr>
 <?php 
