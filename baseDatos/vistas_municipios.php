@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Niveles Academicos</title>
+    <title>Municipios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Nuevo Nivel Academico
+        Nuevo Municipio
     </button>
     <br>
     <a href="../index.php">Regresar</a>
@@ -18,21 +18,21 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Nivel Academico</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Municipio</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="crud_academicos.php" method="post">
-                        <label for="txt_codigo" class="form-label">Codigo de nivel academico: </label>
+                    <form action="crud_municipios.php" method="post">
+                        <label for="txt_codigo" class="form-label">Codigo de municipio: </label>
                         <input type="number" name="txt_codigo" id="txt_codigo" class="form-control">
                         <br>
                         <label for="txt_nombre" class="form-label">Nombre</label>
                         <input type="text" name="txt_nombre" id="txt_nombre" class="form-control">
                         <br>
-                        <label for="txt_descripcion" class="form-label">Descripcion del nivel Academico</label>
-                        <input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control">
+                        <label for="txt_region" class="form-label">Region</label>
+                        <input type="text" name="txt_region" id="txt_region" class="form-control">
                         <br>
-                        <button type="submit" class="form-control btn btn-primary">Agregar un nuevo nivel</button>
+                        <button type="submit" class="form-control btn btn-primary">Agregar un nuevo municipio</button>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -44,33 +44,33 @@
 
     <?php
     require_once('conexion.php');
-    $sql = "SELECT * FROM nivelesacademicos";
+    $sql = "SELECT * FROM municipios";
     $ejecutar = mysqli_query($conexion, $sql);
     ?>
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Codigo_nivel_Academico</th>
+                <th>Codigo_Municipio</th>
                 <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Region</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             <?php while ($fila = mysqli_fetch_array($ejecutar)) { ?>
                 <tr>
-                    <td><?php echo $fila['cod_nivel_acad']; ?></td>
-                    <td><?php echo $fila['nombre']; ?></td>
-                    <td><?php echo $fila['descripcion']; ?></td>
+                    <td><?php echo $fila['cod_muni']; ?></td>
+                    <td><?php echo $fila['nombre_municipio']; ?></td>
+                    <td><?php echo $fila['cod_depto']; ?></td>
                     <td class="d-flex flex-row">
-                        <form action="crud_academicos.php" method="post" class="me-2">
-                            <input type="hidden" name="hidden_codigo" value="<?php echo $fila['cod_nivel_acad']; ?>">
+                        <form action="crud_municipios.php" method="post" class="me-2">
+                            <input type="hidden" name="hidden_codigo" value="<?php echo $fila['cod_muni']; ?>">
                             <button type="submit" name="btn_eliminar" class="btn btn-outline-danger">
                                 <i class="bi bi-trash3"></i>
                             </button>
                         </form>
-                        <form action="actualizar_academicos.php" method="post">
-                            <input type="hidden" name="hidden_codigoa" value="<?php echo $fila['cod_nivel_acad']; ?>">
+                        <form action="actualizar_municipio.php" method="post">
+                            <input type="hidden" name="hidden_codigoa" value="<?php echo $fila['cod_muni']; ?>">
                             <button type="submit" class="btn btn-outline-primary">
                                 <i class="bi bi-pencil-square"></i>
                             </button>

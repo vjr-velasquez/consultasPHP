@@ -12,6 +12,10 @@
     <br>
     <ul>
         <li>
+            <a href="baseDatos/vistas_municipios.php">Procesos CRUD para los municipios</a>
+        </li>
+        <br>
+        <li>
             <a href="baseDatos/vista_regiones.php">Procesos CRUD para las regiones</a>
         </li>
         <br>
