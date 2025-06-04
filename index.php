@@ -12,6 +12,10 @@
     <br>
     <ul>
         <li>
+            <a href="baseDatos/vista_ciudadanos.php">Procesos CRUD para los Ciudadanos</a>
+        </li>
+        <br>
+        <li>
             <a href="baseDatos/vistas_departamentos.php">Procesos CRUD para los departamentos</a>
         </li>
         <br>
